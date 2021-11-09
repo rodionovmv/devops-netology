@@ -12,3 +12,4 @@
 	# terraform.rc
 # Ignore directories
 	# **/terraform/*
+# NEW LINE
