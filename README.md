@@ -12,3 +12,4 @@
 	# terraform.rc - игнорировать файл terraform.rc
 # Ignore directories
 	# **/terraform/* - игнорировать файлы в любой дерриктории с названием terraform
+#Nothing
