@@ -13,3 +13,6 @@
 # Ignore directories
 	# **/terraform/* - игнорировать файлы в любой дерриктории с названием terraform
 #Nothing
+=======
+	# **/terraform/*
+# NEW LINE
