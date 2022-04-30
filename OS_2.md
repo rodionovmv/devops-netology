@@ -20,14 +20,18 @@ cat /etc/systemd/system/node-exporter.service
 Description=Node Exporter
 
 [Service]
-ExecStart=/home/vagrant/node_exporter/node_exporter
-Environment=/etc/default/node_exporter
+ExecStart=/bin/bash -c /home/vagrant/node_exporter/node_exporter $OPTIONS
+EnvironmentFile=/etc/default/node_exporter
 KillMode=process
 Restart=on-failure
 RestartSec=3
 
 [Install]
 WantedBy=multi-user.target
+
+cat /etc/default/node_exporter
+OPTIONS=MY_VALUE_IS_HERE
+
 
 Запуск и остановка сервиса
 
@@ -42,15 +46,19 @@ vagrant@vagrant:~$ ps -aux | grep node_exporter
 root        3876  0.0  1.1 715964 11772 ?        Ssl  16:20   0:00 /home/vagrant/node_exporter/node_exporter
 
 
-vagrant@vagrant:~$ systemctl status node-exporter.service
+vagrant@vagrant:~$ systemctl status node-exporter
 ● node-exporter.service - Node Exporter
      Loaded: loaded (/etc/systemd/system/node-exporter.service; enabled; vendor preset: enabled)
-     Active: active (running) since Thu 2022-04-28 15:48:01 UTC; 4s ago
-   Main PID: 4857 (node_exporter)
-      Tasks: 5 (limit: 1071)
-     Memory: 2.3M
+     Active: active (running) since Sat 2022-04-30 08:22:05 UTC; 5s ago
+   Main PID: 2339 (node_exporter)
+      Tasks: 4 (limit: 1071)
+     Memory: 2.4M
      CGroup: /system.slice/node-exporter.service
-             └─4857 /home/vagrant/node_exporter/node_exporter
+             └─2339 /home/vagrant/node_exporter/node_exporter
+             
+vagrant@vagrant:~$ sudo cat /proc/2339/environ
+LANGUAGE=en_US:OPTIONS=MY_VALUE_IS_HEREPWD=/LANG=en_US.UTF-8INVOCATION_ID=60d5e21b54484d5391dbf5e852ec8507SHLVL=0JOURNAL_STREAM=9:46218PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin_=/home/vagrant/node_exporter/node_exporter
+
 
 vagrant@vagrant:~$ systemctl list-unit-files | grep node-exporter
 node-exporter.service                  enabled         enabled
