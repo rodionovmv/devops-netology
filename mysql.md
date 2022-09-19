@@ -389,3 +389,7 @@ innodb-buffer-pool-size                                      314572800
 innodb-log-file-size                                         104857600
 ~~~
 ```
+
+<details><summary>Docker+MySQL info</summary>
+https://hub.docker.com/_/mysql
+</details>
