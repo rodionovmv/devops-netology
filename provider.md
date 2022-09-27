@@ -21,7 +21,7 @@ data_source = https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3
 ```
 2. Для создания очереди сообщений SQS используется ресурс `aws_sqs_queue` у которого есть параметр `name`. 
 
-   * С каким другим параметром конфликтует `name`? Приложите строчку кода, в которой это указано.
+  * С каким другим параметром конфликтует `name`? Приложите строчку кода, в которой это указано.
 ```doctest
 ConflictsWith: []string{"name_prefix"}
 https://github.com/hashicorp/terraform-provider-aws/blob/6076d5a60ec814b243bc45170d67cb268a39d927/internal/service/sqs/queue.go#L97
