@@ -257,9 +257,9 @@ health status index uuid pri rep docs.count docs.deleted store.size pri.store.si
 #### Создайте директорию {путь до корневой директории с elasticsearch в образе}/snapshots.
 
 * Изменил конфигурационный файл:
-
-
-
+```shell
+path.repo: /elasticsearch-7.17.6/snapshots
+```
 * Создал новый образ, запустил контейнер:
 ```shell
 ....
