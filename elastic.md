@@ -441,7 +441,7 @@ $ curl -XPOST localhost:9200/_snapshot/netology_backup/elasticsearch/_restore?pr
 * Итоговый список индексов:
 ```shell
 $ curl -XGET localhost:9200/_cat/indices/?pretty
-green open .geoip_databases ZqTSSi0PROGk46Mz7otb1A 1 0 43 0 41.1mb 41.1mb
-green open test-2           OPdnuXo-Q9u1SnCwXaDaRA 1 0  0 0   208b   208b
-green open test             66mGGwSQRMi4VGfsc64Qjg 1 0  0 0   208b   208b
+green open .geoip_databases Ulw33KrMRLa2_YzAm0z0bg 1 0 40 0 38.3mb 38.3mb
+green open test-2           WrX6SVbrQfm0HPnQm3a1VQ 1 0  0 0   226b   226b
+green open test             NnFJ3in4Qb6csO94kaFGFw 1 0  0 0   226b   226b
 ```
